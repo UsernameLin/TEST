@@ -1,15 +1,15 @@
 import java.awt.*;
 
 public class ball {
-    private int   x, y, cx, cy, id, size, bounce; 
+    private int   x, y, cx, cy, size, bounce; 
     private Color color;
     final static double  Mul = .5;
-    public ball(int x, int y, int cx, int cy, int id, Color color, int size){
+    public ball(int x, int y, int cx, int cy, Color color, int size){
         this.x = x;
         this.y = y;
         this.cx = cx;
         this.cy = cy;
-        this.id = id;
+        
         this.color = color;
         this.size = size;
     }
@@ -40,9 +40,10 @@ public class ball {
     public int getX(){
         return x;
     }
-    public int getId(){
-        return id;
+    public int getCX(){
+        return cx;
     }
+    
     public void setCx(int i){
         this.cx = i;
     }
