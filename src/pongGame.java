@@ -26,7 +26,7 @@ public class pongGame extends JPanel implements MouseMotionListener {
     public pongGame() {
         userPaddle = new Paddle(10, WINDOW_HEIGHT / 2, 85, 10, Color.BLUE);
         pcPaddle = new Paddle(1250, WINDOW_HEIGHT / 2, 85, 10, Color.RED);
-        create = new ballMaker(Color.YELLOW, WINDOW_WIDTH, WINDOW_HEIGHT, 2000, userPaddle ,pcPaddle);
+        create = new ballMaker( WINDOW_WIDTH, WINDOW_HEIGHT, 20, userPaddle ,pcPaddle);
         mouseY = 0;
         addMouseMotionListener(this);
     }

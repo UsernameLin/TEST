@@ -13,10 +13,10 @@ public class ballMaker {
     private final int winWidth;
     private int userScore, pcScore;
 
-    public ballMaker(Color YELLOW, int WINDOW_WIDTH, int WINDOW_HEIGHT, int numberBall, Paddle user, Paddle pc) {
+    public ballMaker( int WINDOW_WIDTH, int WINDOW_HEIGHT, int numberBall, Paddle user, Paddle pc) {
         gameBall = new ball[numberBall];
         for (int i = 0; i < gameBall.length; i++) {
-            gameBall[i] = new ball(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, Random(), Random(), YELLOW, 10);
+            gameBall[i] = new ball(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, Random(), Random(), getRandColor(), 10);
         }
         m_Pc = pc;
         m_User = user;
@@ -46,6 +46,39 @@ public class ballMaker {
             x = rand.nextInt(-3, 3) * 3;
         }
         return x;
+    }
+    private Color getRandColor(){
+        Color color = Color.CYAN;
+        Random rand = new Random();
+        int i = rand.nextInt(12);
+        switch(i){
+            case 1:color = Color.BLUE;
+            break;
+            case 2:color = Color.CYAN;
+            break;
+            case 3:color = Color.DARK_GRAY;
+            break;
+            case 4:color = Color.GRAY;
+            break;
+            case 5:color = Color.GREEN;
+            break;
+            case 6:color = Color.LIGHT_GRAY;
+            break;
+            case 7:color = Color.MAGENTA;
+            break;
+            case 8:color = Color.ORANGE;
+            break;
+            case 9:color = Color.PINK;
+            break;
+            case 10:color = Color.RED;
+            break;
+            case 11:color = Color.WHITE;
+            break;
+            case 0:color = Color.YELLOW;
+            break;
+        }
+
+        return color; 
     }
 
     private void ballUpdater(Consumer<ball> body) {
